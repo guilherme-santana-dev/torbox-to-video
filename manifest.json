@@ -1,0 +1,25 @@
+{
+"manifest_version": 3,
+"name": "Torbox-videoinator",
+ "version": "1.0",
+  "description": "adds a button that can turn cached magnet link torrents into videos instantly",
+  "host_permissions": [
+    "https://api.torbox.app/*"
+  ],
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "permissions": ["storage"],
+"content_scripts": [
+  {
+    "matches": [
+      "*://*/*"
+    ],
+    "js": [
+      "content.js"
+    ],
+    "run_at": "document_idle"
+  }
+]
+
+}
